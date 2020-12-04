@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;0,800;0,900;1,400;1,600;1,800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #352f5b;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  padding: 40px;
+  letter-spacing: 2px;
+}
+
+.container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* min-height: 100vh; */
+}
+
+/*#region Table decorations */
+.contents table {
+  border-collapse: collapse;
+  text-align: left;
+  max-width: 768px;
+}
+
+thead {
+  border-bottom: 2px solid #000;
+}
+
+tr {
+  border-bottom: 1px dotted #000;
+}
+
+th, td {
+  padding: 20px;
+  background: #423a6f;
+  /* border-right: 1px solid #fff; */
+}
+
+th {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+
+/* Set border radious and align text content */
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Pages and Delete contents alignment */
+th:nth-child(3),
+td:nth-child(3),
+th:last-child,
+td:last-child {
+  text-align: center;
+}
+
+tr:last-child {
+  border: none;
+}
+
+.delete {
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+.delete:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  color: greenyellow;
+}
+/*#endregion End Table decorations */
+
+/*#region Modal styling */
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-container.show {
+  display: block;
+}
+
+.modal {
+  background-color: #352f5b;
+  width: 600px;
+  max-width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  animation: modalopen;
+  animation-duration: 2s;
+}
+
+.modal-header {
+  background-color: #423a6f;
+  padding: 15px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content p {
+  text-align: center;
+}
+
+.modal-form div {
+  margin: 25px 25px 25px 0;
+}
+
+.modal-form label {
+  color: bisque;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.modal-form input {
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid bisque;
+}
+
+.statusDiv label {
+  display: inline-block;
+  width: 220px;
+}
+
+.statusDiv input {
+  display: inline-block;
+  width: 50px;
+}
+
+.checkbox {
+  transform: scale(1.7);
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+}
+/*#endregion End Modal styling */
+
+.submit-btn {
+  background: #423a6f;
+  color: #fff;
+  border: 1px solid bisque;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  transition: .3s ease all;
+}
+
+.submit-btn:hover {
+  box-shadow: 0 0 10px 2px rgba(173, 255, 47, 0.2);
+  color: greenyellow;
+  border: 1px solid #423a6f;
+}
+
+.add-btn {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: #423a6f;
+  transition: 0.5s ease;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  transition: .3s ease all;
+}
+
+.add-btn:hover {
+  box-shadow: 0 0 10px 2px rgba(173, 255, 47, 0.2);
+  color: greenyellow;  
+}
+
+.add-btn.animate {
+  transform: rotate(45deg);
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
