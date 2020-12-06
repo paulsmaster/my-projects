@@ -14,7 +14,8 @@
   <h1>Tic Tac Toe</h1>
   <div class="container">
 
-    <div class="players show">
+    <button type="submit" value="submit" class="submit-btn play-btn show">👉 Click to Play Game 👈</button>
+    <div class="players">
       <div class="player-div player1-div">
         <label for="player1">Player 1 :</label>
         <label for="player-name" class="player-name player-name
@@ -27,28 +28,55 @@
       </div>
     </div>
 
-
-    <!-- <div class="players">
-      <div class="playerDiv player1Div">
-        <label for="player1">Player 1 :</label>
-        <input type="text" class="player player1" placeholder="Enter Player Name">
-      </div>
-      <div class="playerDiv player2Div">
-        <label for="player2">Player 2 :</label>
-        <input type="text" class="player player2" placeholder="Enter Player Name">
-      </div>
-    </div> -->
-
     <div class="board">
-      <input type="button" value="X" class="x-value">
-      <input type="button" value="O" class="o-value">
-      <input type="button" value="X" class="x-value">
-      <input type="button" value="O" class="o-value">
-      <input type="button" value="X" class="x-value">
-      <input type="button" value="O" class="o-value">
-      <input type="button" value="X" class="x-value">
-      <input type="button" value="O" class="o-value">
-      <input type="button" value="X" class="x-value">
+      <input type="button" value="X" class="" id="player-input1">
+      <input type="button" value="O" class="" id="player-input2">
+      <input type="button" value="X" class="" id="player-input3">
+      <input type="button" value="O" class="" id="player-input4">
+      <input type="button" value="X" class="" id="player-input5">
+      <input type="button" value="O" class="" id="player-input6">
+      <input type="button" value="X" class="" id="player-input7">
+      <input type="button" value="O" class="" id="player-input8">
+      <input type="button" value="X" class="" id="player-input9">
+    </div>
+  </div>
+
+  <div class="modal-container modal-container-player" id="modal">
+    <div class="modal">
+      <div class="close-btn" id="close"><i class="fa fa-times"></i></div>
+      <div class="modal-header">
+        <h2>Enter Player Names</h2>
+      </div>
+      <div class="modal-content">
+        <form class="modal-form">
+          <div class="form-div">
+            <label for="player1">Player 1 :</label>
+            <input type="text" id="player1" class="form-input" placeholder="Enter Player Name">
+          </div>
+          <div class="form-div">
+            <label for="player2">Player 2 :</label>
+            <input type="text" id="player1" class="form-input" placeholder="Enter Player Name">
+          </div>
+          <button type="submit" value="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-container modal-container-winner" id="modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Congratulations!</h2>
+      </div>
+      <div class="modal-content">
+        <form class="modal-form">
+          <div class="form-div winner-div">
+            <label for="player1"><span class="winner">Name</span> WINS!</label></br>
+            <label for="player1">Well Played 😀</label>
+          </div>
+          <button type="submit" value="submit" class="submit-btn">Play Again</button>
+        </form>
+      </div>
     </div>
   </div>
 

@@ -2,8 +2,10 @@
 /* font-family: 'Montserrat', sans-serif; */
 
 :root {
-  --primary-color: #423a6f;
-  --secondary-color: #352f5b;
+  --color1: #423a6f;
+  --color2: #352f5b;
+  --color3: orange;
+  --color4: #5cdb94;
 }
 
 * {
@@ -14,7 +16,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--secondary-color);
+  background-color: var(--color2);
   color:#fff;
   text-align: center;
   display: flex;
@@ -28,24 +30,13 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Board design */
-.board {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
-  margin: 20px 0;
-}
-
+/* #region Players Design  */
 .players {
   display: none;
 }
 .players.show {
   display: block;
 }
-
 
 .player-div {
   margin: 20px;  
@@ -57,48 +48,180 @@ h1 {
   margin-right: 10px;   
 }
 .player-div .player1-name {
-  color: yellowgreen;
+  color: var(--color3);
 }
 .player-div .player2-name {
-  color: skyblue;
+  color: var(--color4);
 }
-.player-div input {
-  font-size: 20px;
-  padding: 5px;
-  background: none;
+/* #endregion End Players Design  */
+
+/* #region Board design */
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   border: none;
-  border-bottom: 1px solid yellowgreen;
-  outline: none;
-  color: #fff;  
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
 }
 
 .board input {
-  background: var(--primary-color);
+  background: var(--color1);
   cursor: pointer;
-  border: 2px solid var(--secondary-color);
-  color: #fff;
+  border: 2px solid var(--color2);
+  color: var(--color4);
   font-size: 50px;
   outline: none;
-  width: 150px;
-  height: 150px;
-}
-
-.board .x-value {
-  color: skyblue;
-}
-.board .o-value {
-  color: yellowgreen;
+  width: 100px;
+  height: 100px;
 }
 
 .board label {
   font-size: 50px;
   /* display: none; */
 }
-/* End Board design */
+/* #endregion End Board design */
 
+/*#region Modal styling */
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
-@media only screen and (max-width: 600px) {
+.modal {
+  background-color: var(--color2);
+  width: 600px;
+  max-width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  animation: modalopen;
+  animation-duration: 2s;
+}
 
+.modal-header {
+  background-color: var(--color1);
+  padding: 15px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content p {
+  text-align: center;
+}
+
+.modal-form div {
+  margin: 25px 0;
+  border: 1px solid #fff;
+  padding: 20px;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--color3);
+  text-transform: uppercase;
+}
+
+.modal-form .winner-div {
+  border: none;
+}
+.modal-form .winner-div label {
+  text-align: center;  
+}
+
+.modal-container-winner label {
+  /* display: block; */
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--color3);
+  text-transform: uppercase;
+}
+
+.modal-form input {
+  color: var(--color4);
+  font-size: 20px;
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--color3);
+  text-transform: uppercase;
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background:  var(--color1);
+  color: #fff;
+  border: 1px solid var(--color3);
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  transition: .3s ease all;
+}
+
+.submit-btn:hover {
+  box-shadow: 0 0 10px 2px rgba(173, 255, 47, 0.2);
+  color: greenyellow;
+  border: 1px solid  var(--color1);
+}
+/*#endregion End Modal styling */
+
+/* Play button to start the game  */
+.play-btn {
+  border: none;
+  /* margin: auto; */
+  width: 100%;
+  margin: 20px 0 40px;
+}
+.play-btn:hover {
+  border: none;
+}
+/* End Play button to start the game  */
+
+/* show/hide contents */
+.modal-container-player.show,
+.modal-container-winner.show,
+.play-btn.show,
+.players.show {
+  display: block;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
