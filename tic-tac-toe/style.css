@@ -45,13 +45,14 @@ h1 {
 
 .player-div label {
   font-size: 20px;
-  margin-right: 10px;   
+  margin-right: 10px;
 }
-.player-div .player1-name {
-  color: var(--color3);
-}
-.player-div .player2-name {
+.player-div .player-symbol {
   color: var(--color4);
+}
+.player-div .player-name {
+  color: var(--color3);
+  text-transform: uppercase;
 }
 /* #endregion End Players Design  */
 
@@ -75,6 +76,10 @@ h1 {
   outline: none;
   width: 100px;
   height: 100px;
+}
+
+.board input:hover {
+  background: var(--color2);
 }
 
 .board label {
@@ -141,7 +146,11 @@ h1 {
   border: none;
 }
 .modal-form .winner-div label {
-  text-align: center;  
+  text-align: center;
+  font-size: 1.5rem; 
+}
+.winner {
+  color: var(--color4);
 }
 
 .modal-container-winner label {
@@ -201,6 +210,7 @@ h1 {
   /* margin: auto; */
   width: 100%;
   margin: 20px 0 40px;
+  display: none;
 }
 .play-btn:hover {
   border: none;
