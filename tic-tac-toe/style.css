@@ -31,25 +31,21 @@ h1 {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 360px;
 }
 
 /* #region Players Design  */
 .players {
   display: none;
 }
-.players.show {
-  display: block;
-}
 
 .player-div {
-  margin: 20px;  
+  margin: 20px 0;  
   text-align: left;
 }
 
 .player-div label {
   font-size: 20px;
-  margin-right: 10px;
 }
 .player-div .player-symbol {
   color: var(--color4);
@@ -71,7 +67,6 @@ h1 {
   overflow: hidden;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
-
 }
 
 .board input {
@@ -214,9 +209,8 @@ h1 {
 /* Play button to start the game  */
 .play-btn {
   border: none;
-  /* margin: auto; */
-  width: 100%;
-  margin: 20px 0 40px;
+  margin: 10px auto 30px;
+  /* width: 100%; */
   display: none;
 }
 .play-btn:hover {
