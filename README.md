@@ -6,3 +6,5 @@ List of projects:
 3. Countdown Timer
 4. Infinite Scroll
 5. My Portfolio Website
+6. Book Library
+7. Tic Tac Toe
