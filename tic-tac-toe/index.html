@@ -18,44 +18,53 @@
     <div class="players">
       <div class="player-div player1-div">
         <label for="player1">Player 1 <span class="player-symbol">[ X ]</span> :</label>
-        <label for="player-name" class="player-name player-name
-        player1-name">Paul Subrata Paul Subrata</label>
+        <label for="player-name" class="player-name player1-name"></label>
       </div>
       <div class="player-div player2-div">
         <label for="player2">Player 2 <span class="player-symbol">[ O ]</span> :</label>
-        <label for="player-name" class="player-name player-name
-        player2-name">Subrata Paul Subrata Paul</label>
+        <label for="player-name" class="player-name player2-name"></label>
       </div>
     </div>
 
-    <div class="board">
-      <input type="button" value="X" class="board-box" id="player-input1">
-      <input type="button" value="O" class="board-box" id="player-input2">
-      <input type="button" value="X" class="board-box" id="player-input3">
-      <input type="button" value="O" class="board-box" id="player-input4">
-      <input type="button" value="X" class="board-box" id="player-input5">
-      <input type="button" value="O" class="board-box" id="player-input6">
-      <input type="button" value="X" class="board-box" id="player-input7">
-      <input type="button" value="O" class="board-box" id="player-input8">
-      <input type="button" value="X" class="board-box" id="player-input9">
+    <div class="board-game">
+      <div class="board show">
+        <input type="button" value="" class="board-box" id="player-input1">
+        <input type="button" value="" class="board-box" id="player-input2">
+        <input type="button" value="" class="board-box" id="player-input3">
+        <input type="button" value="" class="board-box" id="player-input4">
+        <input type="button" value="" class="board-box" id="player-input5">
+        <input type="button" value="" class="board-box" id="player-input6">
+        <input type="button" value="" class="board-box" id="player-input7">
+        <input type="button" value="" class="board-box" id="player-input8">
+        <input type="button" value="" class="board-box" id="player-input9">
+      </div>
     </div>
+    
+    <div class="board-info show">
+      <p>☝</p>
+      <p>Click the button to start game</p>
+    </div>
+
   </div>
 
-  <div class="modal-container modal-container-player" id="modal">
+
+  <div class="modal-container modal-container-player">
     <div class="modal">
       <div class="close-btn" id="close"><i class="fa fa-times"></i></div>
       <div class="modal-header">
         <h2>Enter Player Names</h2>
       </div>
       <div class="modal-content">
-        <form class="modal-form">
+        <form class="modal-form modal-form-player">
           <div class="form-div">
             <label for="player1">Player 1 :</label>
-            <input type="text" id="player1" class="form-input" placeholder="Enter Player Name">
+            <input required type="text" id="player1" class="form-input" placeholder="Enter Player Name"
+              autocomplete="off">
           </div>
           <div class="form-div">
             <label for="player2">Player 2 :</label>
-            <input type="text" id="player1" class="form-input" placeholder="Enter Player Name">
+            <input required type="text" id="player2" class="form-input" placeholder="Enter Player Name"
+              autocomplete="off">
           </div>
           <button type="submit" value="submit" class="submit-btn submit-form">Submit</button>
         </form>
@@ -63,13 +72,13 @@
     </div>
   </div>
 
-  <div class="modal-container modal-container-winner" id="modal">
+  <div class="modal-container modal-container-winner">
     <div class="modal">
       <div class="modal-header">
         <h2>Congratulations!</h2>
       </div>
       <div class="modal-content">
-        <form class="modal-form">
+        <form class="modal-form modal-form-winner">
           <div class="form-div winner-div">
             <label for="player1"><span class="winner">Name</span> WINS!</label></br>
             <label for="player1">Well Played 😀</label>
@@ -78,6 +87,10 @@
         </form>
       </div>
     </div>
+  </div>
+
+  <div class="info">
+    <p>NAME - it's your turn 🙂</p>
   </div>
 
   <script src="script.js"></script>

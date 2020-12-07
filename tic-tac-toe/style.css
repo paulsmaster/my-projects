@@ -57,6 +57,10 @@ h1 {
 /* #endregion End Players Design  */
 
 /* #region Board design */
+.board-game {
+  display: none;
+}
+
 .board {
   max-width: 360px;
   max-height: 360px;
@@ -67,6 +71,12 @@ h1 {
   overflow: hidden;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
+}
+
+.board-info {
+  font-size: 20px;
+  margin: 20px auto;
+  display: none;
 }
 
 .board input {
@@ -218,11 +228,18 @@ h1 {
 }
 /* End Play button to start the game  */
 
+.info {
+  display: none;
+}
+
 /* show/hide contents */
+.board-game.show,
+.board-info.show,
 .modal-container-player.show,
 .modal-container-winner.show,
 .play-btn.show,
-.players.show {
+.players.show,
+.info.show {
   display: block;
 }
 
