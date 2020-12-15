@@ -7,10 +7,28 @@ const closeBtn = document.querySelector(".close-btn")
 const playAgainBtn = document.querySelector(".play-again-btn");
 const playerOne = document.querySelector(".player1-name");
 const playerTwo = document.querySelector(".player2-name");
-const cellElements = document.querySelectorAll(".board-box");
-let circleTurn
 
-function addNamestoBoard() {
+// Player input
+const playerInput1 = document.getElementById("player-input1");
+const playerInput2 = document.getElementById("player-input2");
+const playerInput3 = document.getElementById("player-input3");
+const playerInput4 = document.getElementById("player-input4");
+const playerInput5 = document.getElementById("player-input5");
+const playerInput6 = document.getElementById("player-input6");
+const playerInput7 = document.getElementById("player-input7");
+const playerInput8 = document.getElementById("player-input8");
+const playerInput9 = document.getElementById("player-input9");
+
+
+let board = [];
+
+
+playerInput1.addEventListener("click", () => {
+  playerInput1.value = "X";
+});
+
+
+const addNamestoBoard = () => {
   const player1Name = document.querySelector("#player1").value;
   const player2Name = document.querySelector("#player2").value;
   playerOne.textContent = `${player1Name}`;
@@ -23,36 +41,6 @@ function addNamestoBoard() {
   document.querySelector(".info").classList.add("show");  
   modalPlayer.classList.remove("show");
 }
-
-cellElements.forEach(cell => {
-  cell.addEventListener("click", handleClick, { once:true })
-});
-
-function handleClick(e) {
-  const cell = e.target;
-  const currrentClass = circleTurn ? "O" : "X";
-  // input the value in the cell 
-  placeMark(cell, currrentClass);
-  // Check for win
-  // Check for Draw
-  // Switch turns
-  swapTurns();
-}
-
-function placeMark(cell, currrentClass) {
-  cell.value = currrentClass;
-  if(cell.value === "X") {
-    document.querySelector(".info").innerHTML = `Player 2, it's your turn 🙂`;
-  } else {
-    document.querySelector(".info").innerHTML = `Player 1, it's your turn 🙂`;
-  }
-}
-
-function swapTurns() {
-  circleTurn = !circleTurn;
-}
-
-
 
 // Event listeners
 playBtn.addEventListener("click", () => {
@@ -67,11 +55,6 @@ playerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     addNamestoBoard(); 
 });
-
-
-
-
-
 
 
 

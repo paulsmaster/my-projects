@@ -6,6 +6,7 @@
   --color2: #352f5b;
   --color3: orange;
   --color4: #5cdb94;
+  --cell-size: 120px;
 }
 
 * {
@@ -30,9 +31,9 @@ h1 {
   margin-bottom: 20px;
 }
 
-.container {
+/* .container {
   max-width: 360px;
-}
+} */
 
 /* #region Players Design  */
 .players {
@@ -40,7 +41,7 @@ h1 {
 }
 
 .player-div {
-  margin: 20px 0;  
+  margin: 20px;  
   text-align: left;
 }
 
@@ -62,10 +63,11 @@ h1 {
 }
 
 .board {
-  max-width: 360px;
-  max-height: 360px;
+  /* max-width: 360px;
+  max-height: 360px; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, auto);
+  /* grid-template-columns: 1fr 1fr 1fr; */
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -86,8 +88,8 @@ h1 {
   color: var(--color4);
   font-size: 50px;
   outline: none;
-  width: 120px;
-  height: 120px;
+  width: var(--cell-size);
+  height: var(--cell-size);
 }
 
 .board input:hover {

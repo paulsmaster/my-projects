@@ -28,20 +28,19 @@
 
     <div class="board-game">
       <div class="board show">
-        <input type="button" value="" class="board-box" id="player-input1">
-        <input type="button" value="" class="board-box" id="player-input2">
-        <input type="button" value="" class="board-box" id="player-input3">
-        <input type="button" value="" class="board-box" id="player-input4">
-        <input type="button" value="" class="board-box" id="player-input5">
-        <input type="button" value="" class="board-box" id="player-input6">
-        <input type="button" value="" class="board-box" id="player-input7">
-        <input type="button" value="" class="board-box" id="player-input8">
-        <input type="button" value="" class="board-box" id="player-input9">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
+        <input data-cell type="button" value="" class="board-box">
       </div>
     </div>
     
     <div class="board-info show">
-      <p>☝</p>
       <p>Click the button to start game</p>
     </div>
 
@@ -58,12 +57,12 @@
         <form class="modal-form modal-form-player">
           <div class="form-div">
             <label for="player1">Player 1 :</label>
-            <input required type="text" id="player1" class="form-input" placeholder="Enter Player Name"
+            <input data-cell required type="text" id="player1" class="form-input" placeholder="Enter Player Name"
               autocomplete="off">
           </div>
           <div class="form-div">
             <label for="player2">Player 2 :</label>
-            <input required type="text" id="player2" class="form-input" placeholder="Enter Player Name"
+            <input data-cell required type="text" id="player2" class="form-input" placeholder="Enter Player Name"
               autocomplete="off">
           </div>
           <button type="submit" value="submit" class="submit-btn submit-form">Submit</button>
@@ -89,9 +88,7 @@
     </div>
   </div>
 
-  <div class="info">
-    <p>NAME - it's your turn 🙂</p>
-  </div>
+  <div class="info"></div>
 
   <script src="script.js"></script>
 </body>
