@@ -1,6 +1,3 @@
-const game = (() => {
-
-// DOM selectors
 const playBtn = document.querySelector(".play-btn");
 const modalPlayer = document.querySelector(".modal-container-player");
 const modalWinner = document.querySelector(".modal-container-winner");
@@ -20,10 +17,9 @@ const winningConditions = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6]
-];
-let circleTurn;
+]
+let circleTurn
 
-// Add names to the gameboard through form 
 function addNamestoBoard() {
   const player1Name = document.querySelector("#player1").value;
   const player2Name = document.querySelector("#player2").value;
@@ -38,7 +34,6 @@ function addNamestoBoard() {
   modalPlayer.classList.remove("show");
 }
 
-// Start the game 
 function startGame() {
   cellElements.forEach(cell => {
     cell.value = "";
@@ -47,28 +42,25 @@ function startGame() {
   });
 }
 
-// Click on the cell to put X or O in the box 
 function handleClick(e) {
   const cell = e.target;
   const currrentClass = circleTurn ? "O" : "X";
   // input the value in the cell 
   placeMark(cell, currrentClass);
-  // Check who is the winner
+  // Check for win
   if (checkWinX()) {
-    document.querySelector(".winner").innerHTML = `PLAYER 1 is the WINNER! <br> Well Played!! 😀`;
+    document.querySelector(".winner").innerHTML = `PLAYER 1 is the WINNER!`;
     modalWinner.classList.add("show");
   }
-
   if (checkWinO()) {
-    document.querySelector(".winner").innerHTML = `PLAYER 2 is the WINNER! <br> Well Played!! 😀`;
+    document.querySelector(".winner").innerHTML = `PLAYER 2 is the WINNER!`;
     modalWinner.classList.add("show");
   }
-
-  // Check for Draw
   if (checkTie()) {
-    document.querySelector(".winner").innerHTML = `This is a TIE! <br> Both of you played well. 🙂 <br> Try again.`;
+    document.querySelector(".winner").innerHTML = `This is a TIE!`;
     modalWinner.classList.add("show");
   }
+  // Check for Draw
   // Switch turns
   swapTurns();
 }
@@ -87,7 +79,6 @@ function swapTurns() {
   circleTurn = !circleTurn;
 }
 
-// Check conditions to determine winners
 function checkWinX() {
   return winningConditions.some(combination => {
     return combination.every((i) => {
@@ -131,7 +122,7 @@ playAgainBtn.addEventListener("click", (e) => {
   modalWinner.classList.remove("show");
 });
 
-})();
+
 
 
 

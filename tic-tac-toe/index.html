@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <title>Tic Tac Toe</title>
@@ -15,6 +14,8 @@
   <div class="container">
 
     <button type="submit" value="submit" class="show submit-btn play-btn">👉 Play Game 👈</button>
+
+    <!-- Show player names  -->
     <div class="players">
       <div class="player-div player1-div">
         <label for="player1">Player 1 <span class="player-symbol">[ X ]</span> :</label>
@@ -26,27 +27,29 @@
       </div>
     </div>
 
+    <!-- Board to play the game  -->
     <div class="board-game">
       <div class="board show">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
-        <input data-cell type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
+        <input type="button" value="" class="board-box">
       </div>
     </div>
-    
+
+    <!-- Show info to start the game  -->
     <div class="board-info show">
       <p>Click the button to start game</p>
     </div>
 
   </div>
 
-
+  <!-- Enter player names  -->
   <div class="modal-container modal-container-player">
     <div class="modal">
       <div class="close-btn" id="close"><i class="fa fa-times"></i></div>
@@ -57,12 +60,12 @@
         <form class="modal-form modal-form-player">
           <div class="form-div">
             <label for="player1">Player 1 :</label>
-            <input data-cell required type="text" id="player1" class="form-input" placeholder="Enter Player Name"
+            <input required type="text" id="player1" class="form-input" placeholder="Enter Player Name"
               autocomplete="off">
           </div>
           <div class="form-div">
             <label for="player2">Player 2 :</label>
-            <input data-cell required type="text" id="player2" class="form-input" placeholder="Enter Player Name"
+            <input required type="text" id="player2" class="form-input" placeholder="Enter Player Name"
               autocomplete="off">
           </div>
           <button type="submit" value="submit" class="submit-btn submit-form">Submit</button>
@@ -71,6 +74,7 @@
     </div>
   </div>
 
+  <!-- Show winning message  -->
   <div class="modal-container modal-container-winner">
     <div class="modal">
       <div class="modal-header">
@@ -78,9 +82,9 @@
       </div>
       <div class="modal-content">
         <form class="modal-form modal-form-winner">
-          <div class="form-div winner-div">
-            <label for="player1"><span class="winner">Name</span></label></br>
-            <label for="player1">Well Played 😀</label>
+          <div class="form-div winner-div winner">
+            <!-- <label for="player1"><span class="winner">Name</span></label></br>
+            <label for="player1">Well Played 😀</label> -->
           </div>
           <button type="submit" value="submit" class="submit-btn play-again-btn">Play Again</button>
         </form>
@@ -88,6 +92,7 @@
     </div>
   </div>
 
+  <!-- Show info to player's about who's turn  -->
   <div class="info">PLAYER 1, it's your turn 🙂.<br>Click on the box to place "X"</div>
 
   <script src="script.js"></script>
