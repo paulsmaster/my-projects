@@ -46,17 +46,17 @@ function addBookToLibrary() {
   formClose();
 
   // Delete Book
-  // list.addEventListener('click', e => {
-  //   if (e.target.classList.contains('delete')) {
-  //     e.target.parentElement.parentElement.remove();
-  //   }
-  //   myLibrary.forEach((item, index) => {
-  //     if (item.isbn === e.target.parentElement.previousElementSibling.textContent) {
-  //       myLibrary.splice(index, 1);
-  //     }
-  //   });
-  //   localStorage.setItem('library', JSON.stringify(myLibrary));
-  // });
+  list.addEventListener('click', e => {
+    if (e.target.classList.contains('delete')) {
+      e.target.parentElement.parentElement.remove();
+    }
+    myLibrary.forEach((item, index) => {
+      if (item.isbn === e.target.parentElement.previousElementSibling.textContent) {
+        myLibrary.splice(index, 1);
+      }
+    });
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+  });
 
 };
 
